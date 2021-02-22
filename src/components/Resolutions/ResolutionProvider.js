@@ -31,7 +31,7 @@ export const ResolutionProvider = (props) => {
     }
 
     const getResolutionByUser = (userId) => {
-        return fetch(`http://localhost:8000/resolutions?user_id=${userId}` , {
+        return fetch(`http://localhost:8000/resolutions?user_id=${userId}&completed=False` , {
             headers: {
               Authorization: `Token ${localStorage.getItem("resolution_user_id")}`,
               "Content-Type": "application/json",   

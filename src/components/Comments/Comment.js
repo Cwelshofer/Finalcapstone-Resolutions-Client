@@ -3,6 +3,8 @@ import React, { useContext, useEffect } from "react"
 import {Link} from "react-router-dom"
 import { ResolutionContext } from "../Resolutions/ResolutionProvider"
 import { CommentContext } from "./CommentProvider"
+import "./Comments.css" 
+import { Button } from "evergreen-ui"
 
 
 
@@ -21,8 +23,10 @@ export const CommentList = (props) => {
 
     return (
         <>
-        <h2>Comments</h2>
+        <h2 className="comment">Comments</h2>
+        <Button>
         <div><Link to={{pathname:`/home`}}>Back to Resolutions</Link></div>
+        </Button>
         {
             comments !== [] ? comments.map(c => {
                 return <>
@@ -43,11 +47,12 @@ export const CommentList = (props) => {
                 </>
                 
             }).reverse() : null
-        }
+        }   <Button>
              <Link className="resolutionLink" to={`/resolutions/comments/create/${resolution.id}`}>
             add Comment
        
     </Link>
+    </Button>
         </>
     )
 }

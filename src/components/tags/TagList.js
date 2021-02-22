@@ -4,6 +4,8 @@ import { TagContext } from "./TagProvider"
 import { UserContext } from "../Profiles/UserProvider"
 import { DeleteTag } from "../utils/DeleteTag"
 import { Link } from "react-router-dom"
+import { Menu, Button } from "evergreen-ui"
+import "./Tags.css"
 
 
 export const TagList = ({ props }) => {
@@ -30,13 +32,17 @@ export const TagList = ({ props }) => {
                 {
                     tags.map(tag => {
                         return (<>
-                            <div>{tag.label}</div>
-                            {currentUser.user.is_staff ? 
+                        <Menu>
+                            <Menu.Item>
+                            <div className="classTags">{tag.label}</div>
+                            </Menu.Item>
+                            </Menu>
+                            {currentUser.user.is_active ? 
                                 <>
                                 <DeleteTag tagId={tag.id} /> 
                                 <div className="new_tag_btn_container"> 
                                     <Link to={`/tags/edit/${tag.id}`}>
-                                        <button className="new_tag_btn">Edit Tag</button>
+                                        <Button className="new_tag_btn">Edit Tag</Button>
                                     </Link>
                                 </div>
                                 </> : <></>}
@@ -45,7 +51,9 @@ export const TagList = ({ props }) => {
 
                 }
             </div>
+            <Button>
             <Link className="tagform__link" to="/tags/create">Create a new tag</Link>
+            </Button>
         </div>
 
     )

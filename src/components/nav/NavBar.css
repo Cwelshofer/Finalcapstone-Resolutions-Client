@@ -1,0 +1,61 @@
+.fireworks {
+    height: 200px;
+    width: 150px;
+    float: right;
+    top: 8px;
+  left: 16px;
+  position: absolute;
+}
+
+/* resize images */
+.fireworks img {
+    width: 100%;
+    height: auto;
+}
+
+
+@font-face {
+    font-family: 'discotechregular';
+    src: url('./Discotech-3lMG.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.star {
+    text-align: center;
+    color: chartreuse;
+    font-family: 'discotechregular';
+    font-size: 75px;
+    position:relative; 
+    right:0px; 
+    top:0px;
+    
+
+}
+
+
+
+.fireworkz {
+    height: 200px;
+    width: 150px;
+    float: right;
+    top: 8px;
+  right: 16px;
+  position: absolute;
+}
+
+/* resize images */
+.fireworkz img {
+    width: 100%;
+    height: auto;
+}
+
+.navbar_link {
+    text-decoration: none;
+}
+a{
+text-decoration: none;
+color: black;
+}
+

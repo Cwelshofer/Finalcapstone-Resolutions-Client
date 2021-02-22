@@ -1,6 +1,8 @@
 import React, {useContext, useEffect, useRef, useState} from "react"
-
+import { Button } from 'evergreen-ui'
 import {CommentContext} from "./CommentProvider"
+
+
 
 export const CommentForm = (props) => {
     const { addComment, updateComment, getComments } = useContext(CommentContext) 
@@ -39,7 +41,7 @@ export const CommentForm = (props) => {
             resolution_id : comment.resolution_id,
             created_on : comment.created_on
         })
-        .then(props.history.push(`/comments/resolutions/${comment.resolution_id}`))
+        .then(props.history.push(`/resolutions/comments/comment.resolution_id}`))
 
         } else {
         addComment({
@@ -47,7 +49,7 @@ export const CommentForm = (props) => {
             content : comment.content,
             user_id : parseInt(localStorage.getItem("resolution_user_id")),
             resolution_id : parseInt(props.match.params.resolutionId)
-        }).then(props.history.push(`/comments/resolutions/${props.match.params.resolutionId}`))
+        }).then(props.history.push(`/resolutions/comments/${props.match.params.resolutionId}`))
         }
 
     }
@@ -75,30 +77,34 @@ export const CommentForm = (props) => {
                 
                 editMode ?
                 <div className="buttons">
-                <button type="submit" className="CommentSaveBtn btn btn-primary"
+                 <Button type="submit" className="CommentSaveBtn btn btn-primary"
                     onClick={e => {
                         e.preventDefault()
                         saveComment()
-                    }}>Update</button>
-                <button className="btn btn-secondary" 
+                    }}>Update
+                    </Button>
+                    <Button className="btn btn-secondary" 
                     onClick={() => {
-                        props.history.push(`/comments/resolutions/${comment.resolution_id}`)}}>
-                Cancel</button>
+                        props.history.push(`/resolutions/comments/${comment.resolution_id}`)}}>
+                Cancel
+                </Button>
+               
+             
                 </div>
                 :
                 <div className="buttons">
-                <button type="submit" className="CommentSaveBtn btn btn-primary"
+                <Button type="submit" className="CommentSaveBtn btn btn-primary"
                     onClick={e => {
                         e.preventDefault()
                         saveComment()
-                    }}>Save</button>
-                <button className="btn btn-secondary" 
+                    }}>Save</Button>
+                <Button className="btn btn-secondary" 
                     onClick={() => {
                         const resolutionId = parseInt(props.match.params.resolutionId)
-                        props.history.push(`/comments/resolutions/${resolutionId}`)}}>
-                Cancel</button>
+                        props.history.push(`/resolutions/comments/${resolutionId}`)}}>
+                Cancel</Button>
                 </div>
-
+                
                  
             }
             

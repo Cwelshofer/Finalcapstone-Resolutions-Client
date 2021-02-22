@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'starjumpmedium';
+    src: url('./Starjump-yPaV.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.userContainer {
+    color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 35px;
+    line-height: 36px;
+     text-decoration-line: underline;
+}
+
+.myProfile {
+        color: chartreuse;
+        font-family: 'starjumpmedium';
+        font-size: 35px;
+        line-height: 36px;;
+    }
+
+.allusers {
+    color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 40px;
+    line-height: 36px;
+    text-decoration-line: underline;
+}
+
+.Channel {
+    color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 40px;
+    line-height: 36px;
+    text-decoration-line: underline;
+}
+
+.Channel3 {
+    color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 60px;
+    line-height: 36px;
+    text-decoration-line: underline;
+      text-align: center;
+
+}

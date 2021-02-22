@@ -6,6 +6,8 @@
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.5.0",
+    "belle": "^4.0.0",
+    "evergreen-ui": "^5.1.2",
     "grommet": "^2.16.2",
     "grommet-icons": "^4.5.0",
     "polished": "^4.0.5",

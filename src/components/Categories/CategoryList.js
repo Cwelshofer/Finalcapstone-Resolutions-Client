@@ -4,6 +4,8 @@ import { CategoryContext } from "./CategoryProvider";
 import { UserContext } from "../Profiles/UserProvider"
 import { DeleteCategory } from "../utils/DeleteCategory"
 import { Link } from "react-router-dom";
+import { Menu, Button } from "evergreen-ui"
+import "./Category.css"
 
 
 export const CategoryList = (props) => {
@@ -29,27 +31,35 @@ export const CategoryList = (props) => {
   };
 
   return (
-
-    <div style={{ marginTop: "2rem" }}>
-      <h3>Categories</h3>
+    
+    <div className="categoryList">
+      <h3 className="category">Categories</h3>
       <div className="categoryList">
         {categories.map((categoryObject) => {
           return <>
-            <div key={categoryObject.id}>{categoryObject.label}</div>
+      <Menu>
+          <Menu.Item>
+            <div className="categoryobject" key={categoryObject.id}>{categoryObject.label}</div>
+              </Menu.Item>
+                </Menu>
             { //only shows edit and delete if the user is an admin
-              currentUser.user.is_staff ?
+              currentUser.user.is_active ?
                 <>
-                  <DeleteCategory categoryId={categoryObject.id} />
+                   <DeleteCategory categoryId={categoryObject.id} />
                   <div className="new_category_btn_container">
-                    <Link to={`/editcategory/${categoryObject.id}`}>
-                      <button className="new_category_btn" >EDIT</button>
+                    <Link className="editcategory" to={`/editcategory/${categoryObject.id}`}>
+                     <Button className="new_category_btn" >EDIT</Button>
                     </Link>
+                 
+                  
                   </div>
+                 
                 </>
                 : ""}
+              
           </>
         })}
-        <button onClick={toCreateCreateCategory}>+ Category</button>
+        <Button onClick={toCreateCreateCategory}>+ Category</Button>
       </div>
     </div>
 

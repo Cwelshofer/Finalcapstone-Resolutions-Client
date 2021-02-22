@@ -1,7 +1,7 @@
 //displays user information and allows user to subscribe and unsubscribe
 import React, { useContext, useEffect, useState } from "react"
 import { UserContext } from "./UserProvider"
-import defaultImg from "./Images/default.png"
+import defaultImg from "./Images/avatar.jpg"
 import { SubscriptionContext } from "../Subscriptions/SubscriptionProvider"
 import { Link, useHistory } from "react-router-dom"
 
@@ -67,8 +67,9 @@ export const UserDetail = (props) => {
     return (
         <>
             <section>
+                
                 {props.match.params.hasOwnProperty("userId") ?
-                    <h1>{user.user.username}'s Profile</h1> :<div>
+                    <h1 className="myProfile">{user.user.username}'s Profile</h1> :<div className="myProfile">
                         <h1 style={{margin: "2rem 0rem 2rem 0rem"}}>My Profile</h1>
                         <div>{user.user.first_name} {user.user.last_name}</div>
                      
@@ -77,10 +78,10 @@ export const UserDetail = (props) => {
                     ? <img src={defaultImg} style={{ width: `115px` }}></img>
                     : <img src={user.user.profile_image_url} style={{ width: `115px` }}></img>
                 }
-                <div>{user.user.profile_image_url}</div>
-                <div>Username: {user.user.username}</div>
-                <div>email: {user.user.email}</div>
-                <div>Creation Date: {new Date(user.user.date_joined).toLocaleDateString('en-US')}</div>
+                <div className="myProfile">{user.user.profile_image_url}</div>
+                <div className="myProfile">Username: {user.user.username}</div>
+                <div className="myProfile">email: {user.user.email}</div>
+                <div className="myProfile">Creation Date: {new Date(user.user.date_joined).toLocaleDateString('en-US')}</div>
             </section>
             <div>
             </div>

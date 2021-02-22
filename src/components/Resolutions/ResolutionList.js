@@ -3,6 +3,7 @@ import {Link} from "react-router-dom"
 import React, { useContext, useEffect } from "react"
 import { ResolutionContext } from "./ResolutionProvider"
 import { Resolution } from "./Resolution"
+import { Button } from "evergreen-ui"
 
 export const ResolutionList = () => {
     // This state changes when `getLocations()` is invoked below
@@ -25,15 +26,17 @@ export const ResolutionList = () => {
     }, [resolutions])
 
     return (
+        
         <div className="resolutions">
-           
+            
+            <h2 className="res">Resolutions</h2>
         {
             resolutions.map(res => <Resolution key={res.id} resolution={res} />)
-        }
+        }<Button>
          <Link className="resolutionLink" to={'/resolutions/create'}>
             add Resolution
-       
     </Link>
+    </Button>
         </div>
     )
 }

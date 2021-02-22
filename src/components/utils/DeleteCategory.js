@@ -2,7 +2,7 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { CategoryContext} from "../Categories/CategoryProvider";
-
+import { Button } from "evergreen-ui"
 
 export const DeleteCategory = ({categoryId}) => {
   const { deleteCategory} = useContext(CategoryContext);
@@ -29,18 +29,18 @@ export const DeleteCategory = ({categoryId}) => {
 
   return (
     <>
-      <button onClick={onOpen}>DELETE</button>
+      <Button onClick={onOpen}>DELETE</Button>
       {open && (
         <div className={showHideClassName}>
           <div className="modal-main">
             <h3>Confirm</h3>
             <p>Are you sure you want to delete?</p>
             <div>
-              <button onClick={deleteThisCategory}>
+              <Button onClick={deleteThisCategory}>
                 {" "}
                 <strong>Delete</strong>
-              </button>
-              <button onClick={onClose}> Cancel </button>
+              </Button>
+              <Button onClick={onClose}> Cancel </Button>
             </div>
           </div>
         </div>

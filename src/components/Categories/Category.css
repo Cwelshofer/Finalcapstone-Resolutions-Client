@@ -1,0 +1,63 @@
+.category {
+    color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 40px;
+    line-height: 36px;
+    text-decoration-line: underline;
+}
+.categoryList {
+    color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 40px;
+    line-height: 36px;
+    
+}
+
+.editcategory {
+    color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 40px;
+}
+
+.new_category_btn_container a{
+    color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 40px;
+}
+
+.new_category_btn_container{
+     color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 40px;
+}
+
+.categoryobject {
+    color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 40px;
+    text-decoration-line: underline;
+
+}
+
+.label {
+      color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 40px;
+    text-decoration-line: underline;
+
+}
+
+.c {
+         color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 30px;
+}
+
+.p {
+         color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 30px;
+
+
+}
+

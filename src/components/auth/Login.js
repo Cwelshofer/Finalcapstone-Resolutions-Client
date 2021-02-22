@@ -3,14 +3,11 @@ import React, { useRef, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import {
   Anchor,
-  Box,
-  Button,
   Form,
-  FormField,
-  Heading,
   Layer,
-  TextInput,
 } from "grommet";
+import { Button, TextInput, FormField, Heading, Pane } from "evergreen-ui"
+import "./auth.css"
 
 export const Login = (props) => {
   const user = useRef();
@@ -55,8 +52,8 @@ export const Login = (props) => {
   };
 
   return (
-    <Box direction="column" animation="fadeIn">
-      <Box className="container--login">
+    <Pane direction="column" animation="fadeIn">
+      <Pane className="container--login">
         {showUser && (
           <Layer>
             <Heading level="3">User does not exist</Heading>
@@ -78,10 +75,10 @@ export const Login = (props) => {
             />
           </Layer>
         )}
-      </Box>
-      <Box direction="column" alignSelf="center">
-        <Heading level="1">Friends and Family Resolutions</Heading>
-        <Heading level="2">Sign In</Heading>
+      </Pane>
+  
+        <h2 className="friends">Friends and Family Resolutions</h2>
+        <h3 className="friends">Sign In</h3>
         <Form className="form--login" onSubmit={handleLogin}>
           <FormField label="Email address" htmlFor="inputEmail">
             <TextInput
@@ -102,7 +99,7 @@ export const Login = (props) => {
             />
           </FormField>
           <FormField>
-            <Box align="center" pad="medium">
+           
               <Button
                 size="large"
                 label="sign in"
@@ -111,13 +108,12 @@ export const Login = (props) => {
                 pad="small"
                 primary
                 type="submit"
-              />
-            </Box>
+              > Sign In </Button>
+
           </FormField>
         </Form>
-      </Box>
-      <Box className="link--register">
-        <Anchor
+      <Pane className="link--register">
+     <Link
           as={Link}
           to="/register"
           title="register"
@@ -126,8 +122,8 @@ export const Login = (props) => {
           justify="center"
         >
           Not a member yet?
-        </Anchor>
-      </Box>
-    </Box>
+       </Link>
+      </Pane>
+    </Pane>
   );
 };

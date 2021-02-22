@@ -5,6 +5,18 @@ body {
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-image: url(boat.jpg);
+    
+    
+    background-repeat: no-repeat;
+  background-size: 100%;  
+background-size: cover;
+object-fit: cover;
+
+
+  }
+  body::after {
+    opacity: 0.1;
   }
   
   code {

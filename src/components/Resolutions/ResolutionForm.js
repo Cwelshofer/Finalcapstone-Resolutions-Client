@@ -4,8 +4,10 @@ import { ResolutionContext } from "./ResolutionProvider";
 import { CategoryContext } from "../Categories/CategoryProvider";
 import { TagContext } from "../tags/TagProvider";
 import { TagResolutionContext } from "../tags/TagResolutionProvider"
-import { Grommet, Box, DataTable, CheckBox } from 'grommet';
+import { Grommet, Box, DataTable } from 'grommet';
 import { columns } from '../Profiles/Columns'
+import { Button, SelectMenu, Select, TextInput, Checkbox } from 'evergreen-ui'
+
 
 const controlledColumns = columns.map(col => ({ ...col }));
 
@@ -152,6 +154,8 @@ export const ResolutionForm = (props) => {
         }
     }
 
+    
+
     return (
         <>
             {editMode
@@ -162,94 +166,98 @@ export const ResolutionForm = (props) => {
             <form>
                 <fieldset>
                     <div className="form-group">
-                        <input type="text" name="title" className="form-control"
+                        <TextInput type="text" name="title" className="form-control"
                             placeholder="Title" value={resolutionObj.title}
                             onChange={handleControlledInputChange}
                         >
-                        </input>
+                        </TextInput>
                     </div>
                 </fieldset>
 
-                <fieldset>
-                    <div className="form-group">
-                        <input type="text" name="image_url" className="form-control"
-                            placeholder="Image URL" value={resolutionObj.image_url}
-                            onChange={handleControlledInputChange}
-                        >
-                        </input>
-                    </div>
-                </fieldset>
 
                 <fieldset>
                     <div className="form-group">
-                        <textarea type="text" name="content" className="form-control"
+                        <TextInput type="text" name="content" className="form-control"
                             placeholder="Article content" value={resolutionObj.content}
                             onChange={handleControlledInputChange}
                         >
-                        </textarea>
+                        </TextInput>
                     </div>
                 </fieldset>
 
                 <fieldset>
                     <div className="form-group">
-                        <select name="category_id" className="form-control"
+                        
+                    <Select
+                         name="category_id" className="form-control"
                             value={resolutionObj.category_id}
                             onChange={handleControlledInputChange}
                         >
+                    
                             <option value="0">Category Select</option>
                             {
                                 categories.map(c => {
                                     return <option key={c.id} value={c.id}>{c.label}</option>
                                 })
                             }
-                        </select>
+                             
+                        </Select>
+                        
+
                     </div>
+                    
 
 
                 </fieldset>
+         
 
 
                 {editMode   //if in edit mode, displays a Save button, otherwise displays a Publish button
                     ?
-                    <button onClick={(evt) => { constructResolution(evt) }}>
+                    
+                    <Button onClick={(evt) => { constructResolution(evt) }}>
                         Save
-                        </button>
+                        </Button>
                     :
-                    <button onClick={(evt) => { constructResolution(evt) }}>
+                    <Button marginRight={16} appearance="primary" intent="Publish" onClick={(evt) => { constructResolution(evt) }}>
                         Publish
-                        </button>
+                        </Button>
                 }
 
-
+                <div className="Tags">Tags</div>
                 <div className="container--checkboxes">
                     {tags.map((t) => (
                         <div className="checkboxGroup">
-                            <input
+                          <label>
+                                {" #"}{t.label}
+                            </label>
+                            <Checkbox
                                 type="checkbox"
                                 name={t.id}
                                 value={t.id}
                                 checked={checkedState[t.id]}
                                 onChange={handleTagChange}
                             />
-                            <label>
-                                {" #"}{t.label}
-                            </label>
+                          
                         </div>
                     ))}
                 </div>
 
                 <div className="container--checkboxes">
+                <div className="completed">Completed Resolution?</div>
 
-
-                    <input className="check-approve"
+                    <div className="check">
+                            <label>
+                        Completed?
+                </label>
+                    <Checkbox className="check-approve"
                         defaultValue = "false"
                         type="checkbox"
                         name="completed"
                         checked={resolutionObj.completed}
-                        onChange={handleResolutionChange} ></input>
-                    <label>
-                        Completed?
-                </label>
+                        onChange={handleResolutionChange} ></Checkbox>
+            
+                </div>
 
 
                 </div>

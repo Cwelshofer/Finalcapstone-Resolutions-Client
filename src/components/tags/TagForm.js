@@ -1,6 +1,7 @@
 //form to create a new tag
 import React, { useContext, useEffect, useState } from "react"
 import { TagContext } from "./TagProvider"
+import { Button, TextInput } from "evergreen-ui"
 
 
 
@@ -47,24 +48,24 @@ export const TagForm = (props) => {
             <div className="form-group">
 
                 <label htmlFor="label">Enter tag name: </label>
-                <input type="text" name="label" required autoFocus className="form-control"
+                <TextInput type="text" name="label" required autoFocus className="form-control"
                     placeholder="ex: sports, politics, etc"
                     value={tagObj.label}
                     onChange={handleControlledInputChange}
                 />
 
             </div>
-            {editMode ? <button onClick={onOpen}>EDIT</button> : "" }
+            {editMode ? <Button onClick={onOpen}>EDIT</Button> : "" }
 
             {open && (
                 <div className={showHideClassName}>
                     <div className="modal-main">
-                        <h3>
+                        <h3 className="are">
                             Confirm
             </h3>
-                        <p>Are you sure you want to make these changes?</p>
+                        <p className="are">Are you sure you want to make these changes?</p>
                         <div>
-                            <button onClick={() => {
+                            <Button onClick={() => {
                                 updateTag({
                                     id: parseInt(props.match.params.tagId),
                                     label: tagObj.label
@@ -72,13 +73,13 @@ export const TagForm = (props) => {
                                     .then(() => {
                                         props.history.push(`/tags`)
                                     })
-                            }}> <strong>Edit</strong></button>
-                            <button onClick={onClose}> Cancel </button>
+                            }}> Edit</Button>
+                            <Button onClick={onClose}> Cancel </Button>
                         </div>
                     </div>
                 </div>
             )}
-            {editMode ? "" : <button type="submit"
+            {editMode ? "" : <Button type="submit"
                 onClick={evt => {
                     evt.preventDefault()
                     createTag({
@@ -89,7 +90,7 @@ export const TagForm = (props) => {
 
                 className="btn btn-primary">
                 Create Tag
-                </button>}
+                </Button>}
         </fieldset>
     )
 }

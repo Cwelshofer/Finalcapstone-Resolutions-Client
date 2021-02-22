@@ -1,0 +1,22 @@
+.comment {
+    color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 40px;
+    line-height: 36px;
+}
+a{
+text-decoration: none;
+color: black;
+}
+
+.CommentForm__title{
+color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 40px;
+}
+
+.form-group {
+color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 40px;
+}

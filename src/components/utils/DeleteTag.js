@@ -1,7 +1,8 @@
 //delete button component with confirmation modal
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
-import { TagContext } from "../tags/TagProvider"
+import { TagContext } from "../tags/TagProvider";
+import { Button } from "evergreen-ui"
 
 
 export const DeleteTag = ({ tagId }) => {
@@ -29,7 +30,7 @@ export const DeleteTag = ({ tagId }) => {
 
   return (
     <>
-      <button onClick={onOpen}>DELETE</button>
+      <Button onClick={onOpen}>DELETE</Button>
       {open && (
         <div className={showHideClassName}>
           <div className="modal-main">
@@ -38,8 +39,8 @@ export const DeleteTag = ({ tagId }) => {
             </h3>
             <p>Are you sure you want to delete?</p>
             <div>
-              <button onClick={deleteThisTag}> <strong>Delete</strong></button>
-              <button onClick={onClose}> Cancel </button>
+              <Button onClick={deleteThisTag}> Delete</Button>
+              <Button onClick={onClose}> Cancel </Button>
             </div>
           </div>
         </div>

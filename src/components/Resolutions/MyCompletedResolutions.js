@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ResolutionContext } from "./ResolutionProvider";
 import { UserContext } from "../Profiles/UserProvider"
+import { Menu } from "evergreen-ui";
 
 
 export const MyCompletedResolutionList = () => {
@@ -22,21 +23,26 @@ export const MyCompletedResolutionList = () => {
 
   return (
     <>
-      <h2>My Resolutions</h2>
+      <h2 className="my">My Completed Resolutions</h2>
       {usersResolutions.map((r) => {
         return (
+            <Menu>
+                <Menu.Item>
           <div key={r.id} className="container__card">
             <div className="container__cardContent">
-              <p>
+            
                 <Link to={{ pathname: `resolutions/${r.id}` }}>
-                  <strong>{r.title}</strong>
+                  {r.title}
                 </Link>
-              </p>
-              <p>{r.user.user.first_name}</p>
+              
+              -----{r.user.user.first_name}
               {r.category==null? "" :<p>{r.category.label}</p>}
             </div>
           </div>
+          </Menu.Item>
+          </Menu>
         )
+       
       }).reverse()}
     </>
   )

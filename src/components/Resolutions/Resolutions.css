@@ -1,0 +1,114 @@
+.resolution { 
+    color: chartreuse;
+    font-size: large;
+    font-family: 'starjumpmedium';
+    font-size: 40px;
+     text-decoration-line: underline;
+
+
+}
+
+.resolutionList {
+    color: chartreuse;
+    font-size: large;
+    font-family: 'starjumpmedium';
+    font-size: 40px;
+}
+@font-face {
+    font-family: 'starjumpmedium';
+    src: url('./Starjump-yPaV.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.container__card {
+    color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 40px;
+    line-height: 36px;;
+    
+}
+
+.checkboxGroup {
+    color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 40px;
+    line-height: 36px;;
+    
+}
+
+.mydiv {
+    color: chartreuse
+}
+
+.User {
+    color: red;
+    font-family: 'starjumpmedium';
+    font-size: 40px;
+    line-height: 36px;;
+     
+
+}
+
+.Tags {
+    color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 40px;
+    line-height: 36px;
+    text-decoration-line: underline;
+    
+}
+
+.check {
+    color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 40px;
+    line-height: 36px;;
+}
+
+
+.completed {
+    color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 40px;
+    line-height: 36px;
+    text-decoration-line: underline;
+}
+
+.my {
+    color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 40px;
+    line-height: 36px;
+    text-decoration-line: underline;
+}
+.all {
+    color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 40px;
+    line-height: 36px;
+    text-decoration-line: underline;
+}
+
+.res {
+        color: chartreuse;
+        font-family: 'starjumpmedium';
+        font-size: 40px;
+        line-height: 36px;
+        text-decoration-line: underline;
+}
+
+ .User a{
+    color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 40px;
+    text-decoration-line: underline;
+
+}
+
+.container__card a{
+    color: chartreuse;
+    font-family: 'starjumpmedium';
+    font-size: 40px;
+    text-decoration-line: underline;
+}
+

@@ -2,6 +2,7 @@
 import React, { useState, useContext } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { ResolutionContext } from "../Resolutions/ResolutionProvider";
+import { Button } from 'evergreen-ui'
 
 
 export const DeleteItem = ({ resolutionId }) => {
@@ -28,7 +29,7 @@ export const DeleteItem = ({ resolutionId }) => {
 
   return (
     <>
-      <button onClick={onOpen}>DELETE</button>
+      <Button marginRight={16} appearance="primary" intent="Delete" onClick={onOpen}>DELETE</Button>
       {open && (
         <div className={showHideClassName}>
           <div className="modal-main">
@@ -37,8 +38,8 @@ export const DeleteItem = ({ resolutionId }) => {
             </h3>
             <p>Are you sure you want to delete?</p>
             <div>
-              <button onClick={deleteThisResolution}> <strong>Delete</strong></button>
-              <button onClick={onClose}> Cancel </button>
+            <Button marginRight={16} appearance="primary" intent="Delete" onClick={deleteThisResolution}> <strong>Delete</strong></Button>
+            <Button marginRight={16} appearance="primary" intent="Cancel" onClick={onClose}> Cancel </Button>
             </div>
           </div>
         </div>

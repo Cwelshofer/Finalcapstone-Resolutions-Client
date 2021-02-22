@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 import { TagResolutionContext } from "../tags/TagResolutionProvider";
 import { TagContext } from "../tags/TagProvider";
 import { DeleteItem } from "../utils/DeleteItem"
-import { Box, Heading } from "grommet"
+import { Box, Heading } from "grommet";
+import { Button } from 'evergreen-ui';
+import "./Resolutions.css"
 
 
 export const ResolutionDetails = (props) => {
@@ -70,23 +72,24 @@ export const ResolutionDetails = (props) => {
           {/* if current user wrote the post, show an edit button */}
           {resolution.created_by_current_user 
           ? (
-              <section className="container__cardContentTop">              
-                <button onClick={() => props.history.push(`/resolutions/edit/${resolution.id}`)}>
+              <section className="container__cardContentTop">   <Button marginRight={16} appearance="primary" intent="Edit"          
+                 onClick={() => props.history.push(`/resolutions/edit/${resolution.id}`)}>
                   EDIT
-                </button>
-
+               
+                </Button>
                 {resolution.created_by_current_user ? <DeleteItem resolutionId= {resolution.id}/> : <></>}
               </section>
           )
           : (``)
           }
           
-          <img className="resolution__image" src={resolution.image_url} style={{width: `500px`}} alt="article"></img>
+         
           {/* <ReactionList {...props} /> */}
           <div className="resolution__content">{resolution.content}</div>
           <div key={resolution.id} className="resolution__date">
             Published: {new Date(resolution.publication_date).toLocaleDateString("en-US")}
           </div>
+          
           <div>
             {resolution.created_by_current_user 
             ? (
@@ -112,9 +115,8 @@ export const ResolutionDetails = (props) => {
          
                 
             </section>
-            
-            <button className="container__cardContentTop" onClick={() => props.history.push(`/resolutions/comments/${resolution.id}`)}>COMMENTS</button>
-           
+            <Button className="container__cardContentTop" onClick={() => props.history.push(`/resolutions/comments/${resolution.id}`)}>COMMENTS
+            </Button>
             </>
             
             )

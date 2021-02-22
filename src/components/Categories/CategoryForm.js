@@ -1,6 +1,7 @@
 //Form to let user create a new category
 import React, { useEffect, useContext, useState, useHistory } from "react";
 import { CategoryContext } from "./CategoryProvider";
+import { TextInput, Button } from "evergreen-ui"
 
 
 
@@ -48,23 +49,23 @@ export const CategoryForm = (props) => {
     <fieldset>
       <label htmlFor="label">
         <div className="label">Category</div>
-        <input
+        <TextInput
           type="text"
           name="label"
           value={currentCategory.label}
           onChange={handleChange}
         />
       </label>
-      {editMode ? <button className="new_category_btn" onClick={onOpen}>EDIT</button> : ""}
+      {editMode ? <Button className="new_category_btn" onClick={onOpen}>EDIT</Button> : ""}
 
       {open && (
 
         <div className={showHideClassName}>
           <div className="modal-main">
-            <h3>Confirm</h3>
-            <p>Are you sure you want to make these changes?</p>
+            <h3 className="p">Confirm</h3>
+            <p className="c">Are you sure you want to make these changes?</p>
             <div>
-              <button onClick={() => {
+              <Button onClick={() => {
                 editCategory({
                   id: props.match.params.categoryId,
                   label: currentCategory.label
@@ -72,9 +73,9 @@ export const CategoryForm = (props) => {
                   props.history.push("/categories")
                 })
               }}>
-                <strong>Edit</strong>
-              </button>
-              <button onClick={onClose}> Cancel </button>
+                Edit
+              </Button>
+              <Button onClick={onClose}> Cancel </Button>
             </div>
           </div>
         </div>
@@ -82,7 +83,7 @@ export const CategoryForm = (props) => {
 
       )}
       {editMode ? "" :
-        <button
+        <Button
           type="submit"
           onClick={(evt) => {
             evt.preventDefault();
@@ -92,7 +93,7 @@ export const CategoryForm = (props) => {
               .then(() => props.history.push("/categories"))
           }}
           className="btn btn-primary"
-        >Create New Category</button>
+        >Create New Category</Button>
       }
     </fieldset>
 
